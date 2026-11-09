@@ -3,6 +3,8 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+.env
+qdrant_data/
 # C extensions
 *.so
 
@@ -216,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+data/corpus_chunks.jsonl
+
+notebooks/ragas_cache.json

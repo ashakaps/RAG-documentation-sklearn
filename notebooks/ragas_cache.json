@@ -1,0 +1,52 @@
+{
+  "How does Ridge regression handle multicollinearity?": {
+    "response": "Ridge regression addresses some of the problems of Ordinary Least Squares by imposing a penalty on the size of the coefficients, which helps to handle multicollinearity [1]. The ridge coefficients minimize a penalized residual sum of squares, and the complexity parameter α ≥ 0 controls the amount of shrinkage: the larger the value of α, the greater the amount of shrinkage and thus the coefficients become more robust to collinearity [1]. \n\nIn other words, Ridge regression reduces the impact of multicollinearity by adding a penalty term to the loss function, which prevents the coefficients from becoming too large [1]. This makes Ridge regression more robust to multicollinearity compared to Ordinary Least Squares. \n\nIt's worth noting that the choice of the solver in Ridge regression can also affect how it handles multicollinearity. The solver can be chosen automatically by setting solver=\"auto\", which will choose between the \"lbfgs\", \"cholesky\", and \"sparse_cg\" solvers based on certain conditions [2]. \n\nOverall, Ridge regression provides a way to handle multicollinearity by adding a penalty term to the loss function and by choosing an appropriate solver [1], [2].",
+    "faithfulness": 0.8571428571428571,
+    "answer_relevancy": 0.9646556129319803
+  },
+  "What does the alpha parameter control in Ridge?": {
+    "response": "The alpha parameter in Ridge controls the regularization strength [1], [3], [4]. It is a parameter that determines the amount of shrinkage applied to the coefficients of the linear model. A larger value of alpha results in stronger regularization, which can help to prevent overfitting [1]. In the context of Ridge regression, alpha is used to balance the trade-off between fitting the data well and keeping the model simple [3]. Additionally, the alpha parameter is also used in cross-validation to select the optimal value of alpha for the model, as seen in the RidgeCV class [4]. \n\nReferences:\n[1] https://scikit-learn.org/stable/modules/linear_model.html\n[3] https://scikit-learn.org/stable/modules/linear_model.html\n[4] https://scikit-learn.org/stable/modules/linear_model.html",
+    "answer_relevancy": 0.957651441955139,
+    "faithfulness": 0.7142857142857143
+  },
+  "What is the difference between Lasso and Ridge?": {
+    "response": "The main difference between Lasso and Ridge is the type of regularization they use. Lasso uses \\(\\ell_1\\)-norm regularization, which can set coefficients exactly to zero, resulting in a sparse model [3]. Ridge, on the other hand, uses \\(\\ell_2\\)-norm regularization, which does not set coefficients to zero, but instead shrinks them towards zero [1]. This means that Lasso is more likely to select a subset of features and set the others to zero, while Ridge will reduce the magnitude of all coefficients, but not set any to zero.\n\nIn terms of the objective function, Lasso minimizes \\(\\min_{w} {\\frac{1}{2n_{\\text{samples}}} ||X w - y||_2 ^ 2 + \\alpha ||w||_1}\\) [4], while Ridge minimizes a similar function with an \\(\\ell_2\\)-norm penalty term instead of \\(\\ell_1\\)-norm.\n\nElastic-net, which is a combination of Lasso and Ridge, allows for a trade-off between the two types of regularization, using a convex combination of \\(\\ell_1\\) and \\(\\ell_2\\) norms [2]. This can be useful when there are multiple correlated features, as Lasso may randomly select one of them, while Elastic-net is more likely to select all of them [2]. \n\nReferences:\n[1] https://scikit-learn.org/stable/modules/linear_model.html\n[2] https://scikit-learn.org/stable/modules/linear_model.html\n[3] https://scikit-learn.org/stable/modules/linear_model.html\n[4] https://scikit-learn.org/stable/modules/linear_model.html",
+    "answer_relevancy": 0.9615631338472789,
+    "faithfulness": 1.0
+  },
+  "What does min_samples_leaf control in a decision tree?": {
+    "response": "`min_samples_leaf` controls the minimum size of each leaf node in a decision tree, ensuring that every decision in the tree is informed by multiple samples [1]. It guarantees that each leaf has a minimum size, avoiding low-variance, over-fit leaf nodes in regression problems [1]. This parameter is also independent of `sample_weight`, if provided [2]. \n\nIn other words, `min_samples_leaf` prevents the tree from creating arbitrarily small leaves, which can lead to overfitting [1]. By setting a minimum number of samples required at each leaf node, `min_samples_leaf` helps to prevent the tree from becoming too complex and improves its ability to generalize the data [4]. \n\nFor example, setting `min_samples_leaf=5` can be a good initial value to ensure that each leaf node has at least 5 samples [1]. However, the optimal value of `min_samples_leaf` may vary depending on the specific problem and dataset. \n\nReferences: \n[1] https://scikit-learn.org/stable/modules/tree.html\n[2] https://scikit-learn.org/stable/modules/tree.html\n[4] https://scikit-learn.org/stable/modules/tree.html",
+    "faithfulness": 0.8181818181818182,
+    "answer_relevancy": 0.9640113870023707
+  },
+  "When does a decision tree overfit?": {
+    "response": "A decision tree tends to overfit when it is too complex and does not generalize the data well [1]. This can happen when the tree is too deep or when there are too few samples in high-dimensional space [2], [3]. Specifically, a tree with few samples in high-dimensional space is very likely to overfit [2], [3]. Additionally, decision trees can create over-complex trees that do not generalize the data well, which is called overfitting [1]. To avoid overfitting, mechanisms such as pruning, setting the minimum number of samples required at a leaf node, or setting the maximum depth of the tree are necessary [1]. It is also recommended to perform dimensionality reduction (e.g., PCA, ICA, or feature selection) beforehand to give the tree a better chance of finding features that are discriminative [2]. \n\nReferences:\n[1] https://scikit-learn.org/stable/modules/tree.html\n[2] https://scikit-learn.org/stable/modules/tree.html\n[3] https://scikit-learn.org/stable/modules/tree.html",
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.9413704953000191
+  },
+  "What is the formula for precision?": {
+    "response": "The formula for precision is: \n\n\\[ \\text{precision} = \\frac{\\text{tp}}{\\text{tp} + \\text{fp}} \\]\n\nThis can be found in the scikit-learn documentation [2].",
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.9690411884919294
+  },
+  "When is recall more important than precision?": {
+    "response": "When β is greater than 1, recall is more important than precision in the F-measure calculation [2]. This is because the F-measure is a weighted harmonic mean of precision and recall, with precision's contribution to the mean weighted by the parameter β. When β is greater than 1, the recall term is given more weight, making recall more important than precision [2]. \n\nHowever, when β equals 1, recall and precision are equally important, as Fβ and F1 are equivalent in this case [1, 2]. \n\nIt's worth noting that the context does not provide a specific scenario where recall is more important than precision in a practical sense, but rather explains the mathematical relationship between the two in the context of the F-measure [2].",
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.9130606858208198
+  },
+  "Что такое L2-регуляризация?": {
+    "response": "L2-регуляризация - это тип регуляризации, который используется в логистической регрессии, реализованной в классе `LogisticRegression` [2]. Она также известна как регуляризация Риджа. В контексте логистической регрессии L2-регуляризация применяется для предотвращения переобучения модели [2]. Это достигается путем добавления штрафного члена к функции потерь, который пропорционален квадрату величины коэффициентов модели. Это заставляет модель иметь меньшие коэффициенты, что может улучшить ее обобщающую способность. Кроме того, в контексте линейных моделей регуляризация упоминается как один из способов предотвращения переобучения [1]. Однако конкретная формулировка L2-регуляризации не приведена в контексте.",
+    "faithfulness": 0.5714285714285714,
+    "answer_relevancy": 0.9628598467586743
+  },
+  "Что такое F1-мера?": {
+    "response": "F1-мера, также известная как сбалансированная F-мера или F-мера, представляет собой гармоническое среднее значение точности и полноты [1]. Она рассчитывается по формуле: \n\n\\[F_1 = 2 \\frac{\\text{precision} \\times \\text{recall}}{\\text{precision} + \\text{recall}}\\]\n\nили, что эквивалентно, \n\n\\[F_1 = \\frac{2 \\text{tp}}{2 \\text{tp} + \\text{fp} + \\text{fn}}\\]\n\nгде tp — истинные положительные, fp — ложные положительные, fn — ложные отрицательные [1, 2]. F1-мера используется для оценки качества бинарной классификации [3, 4]. В scikit-learn F1-мера может быть рассчитана с помощью функции `f1_score` [3, 4].",
+    "faithfulness": 0.875,
+    "answer_relevancy": 0.8554772025168781
+  },
+  "Что ты умеешь?": {
+    "response": "Я могу помочь с вопросами, связанными с тремя основными темами, покрытыми в курсе Classic ML: **линейными моделями**, **деревьями решений** и **метриками** [1]. В частности, я могу ответить на вопросы об обычных методах наименьших квадратов, Ridge, Lasso, ElasticNet, логистической регрессии, SGD, стратегиях регуляризации, L1 vs L2 [1]. Также я могу помочь с вопросами о классификационных деревьях, регрессионных деревьях, критериях Gini и энтропии, обрезке, практических советах по настройке [1]. Кроме того, я могу ответить на вопросы о матрицах путаницы, точности, полноте, F1, ROC AUC, логарифмической потере, MSE, MAE, R², многоклассовой усреднении [1]. \n\nОднако, я не могу ответить на вопросы об ансамблях, перекрестной проверке, предварительной обработке, конвейерах, поиске по сетке, импутерах или выборе признаков [1], [2], а также на вопросы, связанные с глубоким обучением, трансформерами, вложениями, агентами, библиотеками временных рядов, системами рекомендаций, компьютерным зрением и другими темами, не связанными с scikit-learn [2]. Если вы зададите вопрос, выходящий за рамки моих возможностей, я честно скажу \"Я не знаю\" [2].",
+    "faithfulness": 0.9761904761904762,
+    "answer_relevancy": 0.9069949915008014
+  }
+}
