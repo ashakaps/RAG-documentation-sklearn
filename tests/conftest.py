@@ -1,10 +1,10 @@
-import pytest
-from fastapi.testclient import TestClient
+"""Общие настройки тестов.
 
-from app.main import app
+`app.config.Settings` требует `LLM_API_KEY` при импорте. Тестам реальный ключ
+не нужен (LLM замокана), поэтому подставляем заглушку до импорта `app`:
+так pytest работает и на чистой машине, и в CI без секретов.
+"""
 
+import os
 
-@pytest.fixture(scope="session")
-def client():
-    with TestClient(app) as c:
-        yield c
+os.environ.setdefault("LLM_API_KEY", "test-key")
