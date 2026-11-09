@@ -32,13 +32,13 @@ flowchart LR
 
 ## Локальный запуск
 
-\`\`\`bash
+```bash
 cp .env.example .env        # впишите LLM_API_KEY
 docker compose up -d qdrant
 python -m app.scripts.load_corpus
 python -m app.scripts.index_corpus
 docker compose up -d --build app
-\`\`\`
+```
 
 Откройте <http://localhost:8000>
 
