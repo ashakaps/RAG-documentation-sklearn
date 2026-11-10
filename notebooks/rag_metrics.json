@@ -1,14 +1,14 @@
 {
-  "n_questions": 10,
+  "n_questions": 17,
   "model": "meta-llama/llama-3.3-70b-instruct",
   "embedding_model": "intfloat/multilingual-e5-small",
   "top_k": 4,
   "retriever": {
     "recall_at_4": 1.0,
-    "hits": 10
+    "hits": 17
   },
   "generation": {
-    "faithfulness": 0.8812229437229437,
-    "answer_relevancy": 0.939668598612589
+    "faithfulness": 0.8577300150829563,
+    "answer_relevancy": 0.8819627847670235
   }
 }
