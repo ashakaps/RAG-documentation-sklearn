@@ -18,7 +18,7 @@ flowchart LR
 ## Метрики
 
 Замеры на реальной системе (10 вопросов golden dataset,
-3 sklearn-модуля + about.md → 265 чанков, qwen3-next-80b-a3b-instruct,
+10 sklearn-модуля + about.md → 559 чанков, qwen3-next-80b-a3b-instruct,
 `notebooks/rag_eval.ipynb`, итог в `notebooks/rag_metrics.json`):
 
 Результаты поиска и оценки ответов на одном наборе вопросов (golden dataset)

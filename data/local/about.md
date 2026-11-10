@@ -1,7 +1,7 @@
 # About this RAG assistant
 
 This is a study assistant for the Classic ML cycle. The corpus contains the official documentation of
-scikit-learn for three core topics covered in the course.
+scikit-learn for ten topics covered in the course.
 
 ## What topics I can answer questions about
 
@@ -11,13 +11,24 @@ scikit-learn for three core topics covered in the course.
   and entropy criteria, pruning, practical tuning tips.
 - **Metrics**: confusion matrix, accuracy, precision, recall, F1,
   ROC AUC, log-loss, MSE, MAE, R², multiclass averaging.
+- **Ensembles**: bagging, random forests, gradient boosting,
+  AdaBoost, voting and stacking.
+- **Cross-validation**: KFold, StratifiedKFold, train/test split,
+  cross_val_score, avoiding data leakage.
+- **Preprocessing**: scaling, normalisation, encoding categorical
+  features, discretisation, polynomial features.
+- **Pipelines and composition**: Pipeline, ColumnTransformer,
+  FeatureUnion, combining preprocessing with a model.
+- **Hyperparameter search**: GridSearchCV, RandomizedSearchCV,
+  successive halving.
+- **Imputation**: SimpleImputer, KNNImputer, IterativeImputer,
+  missing-value indicators.
+- **Feature selection**: variance threshold, univariate selection,
+  recursive feature elimination, model-based selection.
 
 I respond in the same language as your question — English or Russian.
 
 ## What I CANNOT answer
-
-The default corpus does NOT cover ensembles, cross-validation,
-preprocessing, pipelines, grid search, imputers, or feature selection.
 
 Out of scope entirely: deep learning, transformers, embeddings,
 agents, time-series libraries, recommendation systems, computer vision,
